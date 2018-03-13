@@ -95,7 +95,7 @@ void chain_plugin::plugin_initialize(const variables_map& options) {
    if(options.count("genesis-json")) {
       auto genesis = options.at("genesis-json").as<bfs::path>();
       if(genesis.is_relative())
-         my->genesis_file = app().config_dir() / genesis;
+         my->genesis_file = genesis;
       else
          my->genesis_file = genesis;
    }

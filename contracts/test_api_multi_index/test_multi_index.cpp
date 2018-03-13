@@ -3,7 +3,8 @@
 #include <eosiolib/print.hpp>
 #include <boost/range/iterator_range.hpp>
 #include <limits>
-#include <cmath>
+//#include <cmath>
+#include <cstdlib>
 
 namespace _test_multi_index {
 
