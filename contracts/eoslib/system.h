@@ -38,6 +38,8 @@ extern "C" {
     */
    time  now();
 
+   uint32_t head_block_num();
+
    ///@ } systemcapi
 }
 

@@ -473,9 +473,14 @@ DEFINE_INTRINSIC_FUNCTION0(env,now,now,i32) {
    return wasm_interface::get().current_validate_context->controller.head_block_time().sec_since_epoch();
 }
 
-DEFINE_INTRINSIC_FUNCTION0(env,current_code,current_code,i64) {
-   auto& wasm  = wasm_interface::get();
-   return wasm.current_validate_context->code.value;
+DEFINE_INTRINSIC_FUNCTION0(env, head_block_num, head_block_num, i32){
+    return wasm_interface::get().current_validate_context->controller.head_block_num();
+}
+
+DEFINE_INTRINSIC_FUNCTION0(env, current_code, current_code, i64)
+{
+  auto &wasm = wasm_interface::get();
+  return wasm.current_validate_context->code.value;
 }
 
 DEFINE_INTRINSIC_FUNCTION1(env,require_auth,require_auth,none,i64,account) {
